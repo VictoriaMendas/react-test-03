@@ -1,0 +1,28 @@
+.button {
+  background-color: rgb(228, 205, 205);
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid grey;
+  text-transform: capitalize;
+}
+.button:hover,
+.button:focus {
+  background-color: rgb(168, 107, 107);
+  color: white;
+  cursor: pointer;
+}
+.options {
+  margin: 20px 0;
+}
+
+.resetBtn {
+  padding: 5px 10px;
+  border: 1px solid grey;
+  background-color: rgb(228, 205, 205);
+}
+.resetBtn:hover,
+.resetBtn:focus {
+  background-color: rgb(241, 91, 91);
+  color: white;
+  cursor: pointer;
+}
