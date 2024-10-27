@@ -1,19 +1,47 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import css from "./ContactForm.module.css";
+import * as Yup from "yup";
 
-export default function ContactForm() {
+const INITIAL_VALUE = {
+  name: "",
+  numbert: "",
+};
+const ContactSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  number: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+});
+
+export default function ContactForm({ onAddContact }) {
+  const handleSubmit = (values, actions) => {
+    onAddContact(values);
+    actions.resetForm();
+  };
   return (
-    <Formik className={css.formBox}>
-      <Form action="">
-        <lable className={css.form}>
-          <span>Name</span>
-          <Field type="text" />
-        </lable>
-        <lable className={css.form}>
-          <span>Number</span>
-          <Field type="text" />
-        </lable>
-        <button>Ad contact</button>
+    <Formik
+      initialValues={INITIAL_VALUE}
+      validationSchema={ContactSchema}
+      onSubmit={handleSubmit}
+    >
+      <Form className={css.form}>
+        <label className={css.label}>
+          <span className={css.title}>Name</span>
+          <Field type="text" name="name" className={css.input} />
+          <ErrorMessage name="name" component="span" />
+        </label>
+        <label className={css.label}>
+          <span className={css.title}>Number</span>
+          <Field type="text" name="number" className={css.input} />
+          <ErrorMessage name="number" component="span" />
+        </label>
+        <button type="submit" className={css.btnForm}>
+          Ad contact
+        </button>
       </Form>
     </Formik>
   );
