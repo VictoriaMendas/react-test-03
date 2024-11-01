@@ -1,9 +1,9 @@
-export default function SearchBox({ filter, onChangeFilter }) {
+export default function SearchBox({ filter, changeFilter }) {
   return (
     <div>
       <label>
-        Find contacts by name
-        <input type="text" onChange={onChangeFilter} value={filter} />
+        Find contact by name
+        <input type="text" value={filter} onChange={changeFilter} />
       </label>
     </div>
   );
