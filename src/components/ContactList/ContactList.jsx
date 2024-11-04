@@ -5,11 +5,11 @@ export default function ContactList({ contacts, onDeleteContact }) {
   return (
     <div>
       <ul className={css.contact}>
-        {contacts.map((contact) => {
+        {contacts.map((contact) => (
           <li key={contact.id}>
             <Contact contact={contact} onDeleteContact={onDeleteContact} />
-          </li>;
-        })}
+          </li>
+        ))}
       </ul>
     </div>
   );

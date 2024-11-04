@@ -1,0 +1,34 @@
+.contactBox {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  list-style: none;
+  font-size: 15px;
+}
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 15px;
+  width: 255px;
+}
+.iconName {
+  margin-right: 10px;
+}
+.iconNumber {
+  margin-right: 10px;
+}
+.deleteBtn {
+  padding: 5px 10px;
+
+  border-color: transparent;
+  cursor: pointer;
+  background-color: aquamarine;
+}
+.deleteBtn:hover,
+.deleteBtn:focus {
+  color: white;
+  background-color: blueviolet;
+}

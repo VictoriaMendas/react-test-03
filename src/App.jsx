@@ -3,7 +3,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useEffect, useState } from "react";
-import dataFromServer from "./dataFromServer.json";
+import dataFromServer from "../dataFromServer.json";
 
 function App() {
   const [filter, setFilter] = useState("");

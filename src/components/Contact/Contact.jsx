@@ -1,22 +1,26 @@
-import { BiCool } from "react-icons/bi";
-import { FaPhoneAlt } from "react-icons/fa";
 import css from "./Contact.module.css";
+import { FaUser } from "react-icons/fa";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 export default function Contact({ contact, onDeleteContact }) {
   return (
-    <div>
-      <div className={css.boxContact}>
+    <div className={css.contactCard}>
+      <div className={css.contactBox}>
         <span>
-          {" "}
-          <BiCool /> {contact.name}
+          <FaUser className={css.iconName} />
+          {contact.name}{" "}
         </span>
+
         <span>
-          <FaPhoneAlt />
+          <BsFillTelephoneFill className={css.iconNumber} />
           {contact.number}
         </span>
       </div>
-
-      <button type="button" onClick={() => onDeleteContact(contact.id)}>
+      <button
+        onClick={() => onDeleteContact(contact.id)}
+        className={css.deleteBtn}
+        type="button"
+      >
         Delete
       </button>
     </div>

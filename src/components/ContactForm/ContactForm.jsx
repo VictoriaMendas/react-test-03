@@ -4,8 +4,9 @@ import * as Yup from "yup";
 
 const INITIAL_VALUE = {
   name: "",
-  numbert: "",
+  number: "",
 };
+
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
@@ -22,6 +23,7 @@ export default function ContactForm({ onAddContact }) {
     onAddContact(values);
     actions.resetForm();
   };
+
   return (
     <Formik
       initialValues={INITIAL_VALUE}
@@ -35,12 +37,13 @@ export default function ContactForm({ onAddContact }) {
           <ErrorMessage name="name" component="span" />
         </label>
         <label className={css.label}>
-          <span className={css.title}>Number</span>
+          <span className={css.title}> Number</span>
+
           <Field type="text" name="number" className={css.input} />
           <ErrorMessage name="number" component="span" />
         </label>
-        <button type="submit" className={css.btnForm}>
-          Ad contact
+        <button type="submit" className={css.btn}>
+          Add contact
         </button>
       </Form>
     </Formik>
